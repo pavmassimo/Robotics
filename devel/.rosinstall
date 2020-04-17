@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/osboxes/robotics/Shared/devel/setup.sh

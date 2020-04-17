@@ -1,0 +1,8 @@
+prefix=/home/osboxes/robotics/Shared/devel
+
+Name: lla2enu
+Description: Description of lla2enu
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
