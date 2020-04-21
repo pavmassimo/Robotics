@@ -1,8 +1,8 @@
-# Install script for directory: /home/osboxes/robotics/Shared/src/lla2enu
+# Install script for directory: /home/osboxes/Robotics/src/lla2enu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/osboxes/robotics/Shared/install")
+  set(CMAKE_INSTALL_PREFIX "/home/osboxes/Robotics/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/osboxes/robotics/Shared/build/lla2enu/catkin_generated/installspace/lla2enu.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/osboxes/Robotics/build/lla2enu/catkin_generated/installspace/lla2enu.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lla2enu/cmake" TYPE FILE FILES
-    "/home/osboxes/robotics/Shared/build/lla2enu/catkin_generated/installspace/lla2enuConfig.cmake"
-    "/home/osboxes/robotics/Shared/build/lla2enu/catkin_generated/installspace/lla2enuConfig-version.cmake"
+    "/home/osboxes/Robotics/build/lla2enu/catkin_generated/installspace/lla2enuConfig.cmake"
+    "/home/osboxes/Robotics/build/lla2enu/catkin_generated/installspace/lla2enuConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lla2enu" TYPE FILE FILES "/home/osboxes/robotics/Shared/src/lla2enu/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lla2enu" TYPE FILE FILES "/home/osboxes/Robotics/src/lla2enu/package.xml")
 endif()
 

@@ -1,5 +1,0 @@
-<launch>
-	<group ns="subscribers">
-		<node pkg="lla2enu" type="subscriber_front" name="sub_front" launch-prefix="xterm -e"/>
-	</group>
-</launch>

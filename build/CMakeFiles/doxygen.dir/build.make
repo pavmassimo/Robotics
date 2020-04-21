@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/osboxes/robotics/Shared/src
+CMAKE_SOURCE_DIR = /home/osboxes/Robotics/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/osboxes/robotics/Shared/build
+CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/osboxes/robotics/Shared/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/robotics/Shared/src /home/osboxes/robotics/Shared/src /home/osboxes/robotics/Shared/build /home/osboxes/robotics/Shared/build /home/osboxes/robotics/Shared/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/osboxes/Robotics/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/osboxes/Robotics/src /home/osboxes/Robotics/src /home/osboxes/Robotics/build /home/osboxes/Robotics/build /home/osboxes/Robotics/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

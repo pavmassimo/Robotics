@@ -67,14 +67,14 @@ set(lla2enu_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(lla2enu_SOURCE_PREFIX /home/osboxes/robotics/Shared/src/lla2enu)
-  set(lla2enu_DEVEL_PREFIX /home/osboxes/robotics/Shared/devel)
+  set(lla2enu_SOURCE_PREFIX /home/osboxes/Robotics/src/lla2enu)
+  set(lla2enu_DEVEL_PREFIX /home/osboxes/Robotics/devel)
   set(lla2enu_INSTALL_PREFIX "")
   set(lla2enu_PREFIX ${lla2enu_DEVEL_PREFIX})
 else()
   set(lla2enu_SOURCE_PREFIX "")
   set(lla2enu_DEVEL_PREFIX "")
-  set(lla2enu_INSTALL_PREFIX /home/osboxes/robotics/Shared/install)
+  set(lla2enu_INSTALL_PREFIX /home/osboxes/Robotics/install)
   set(lla2enu_PREFIX ${lla2enu_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/osboxes/robotics/Shared/install/lib;/home/osboxes/robotics/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/osboxes/Robotics/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

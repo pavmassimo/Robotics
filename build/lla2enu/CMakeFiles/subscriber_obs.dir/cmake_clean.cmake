@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/subscriber_obs.dir/src/sub_obs.cpp.o"
-  "/home/osboxes/robotics/Shared/devel/lib/lla2enu/subscriber_obs.pdb"
-  "/home/osboxes/robotics/Shared/devel/lib/lla2enu/subscriber_obs"
+  "CMakeFiles/subscriber_obs.dir/src/subscriber_obs.cpp.o"
+  "/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_obs.pdb"
+  "/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_obs"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/osboxes/robotics/Shared/install")
+  set(CMAKE_INSTALL_PREFIX "/home/osboxes/Robotics/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/osboxes/robotics/Shared/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/osboxes/Robotics/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

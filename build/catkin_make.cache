@@ -1,2 +1,2 @@
 lla2enu
--DCATKIN_DEVEL_PREFIX=/home/osboxes/robotics/Shared/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/robotics/Shared/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/osboxes/Robotics/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/Robotics/install -G Unix Makefiles

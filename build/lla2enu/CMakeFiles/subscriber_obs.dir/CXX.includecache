@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/robotics/Shared/src/lla2enu/src/sub_obs.cpp
+/home/osboxes/Robotics/src/lla2enu/src/subscriber_obs.cpp
 ros/ros.h
-/home/osboxes/robotics/Shared/src/lla2enu/src/ros/ros.h
+/home/osboxes/Robotics/src/lla2enu/src/ros/ros.h
 std_msgs/String.h
-/home/osboxes/robotics/Shared/src/lla2enu/src/std_msgs/String.h
+/home/osboxes/Robotics/src/lla2enu/src/std_msgs/String.h
 sensor_msgs/NavSatFix.h
-/home/osboxes/robotics/Shared/src/lla2enu/src/sensor_msgs/NavSatFix.h
+/home/osboxes/Robotics/src/lla2enu/src/sensor_msgs/NavSatFix.h
 math.h
 -
 

@@ -1,4 +1,4 @@
-prefix=/home/osboxes/robotics/Shared/devel
+prefix=/home/osboxes/Robotics/devel
 
 Name: lla2enu
 Description: Description of lla2enu
