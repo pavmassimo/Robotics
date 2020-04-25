@@ -207,5 +207,8 @@ include_directories(
 
 add_executable(subscriber_front src/subscriber_front.cpp)
 add_executable(subscriber_obs src/subscriber_obs.cpp)
+add_executable(service src/service.cpp)
+
 target_link_libraries(subscriber_front ${catkin_LIBRARIES})
 target_link_libraries(subscriber_obs ${catkin_LIBRARIES})
+target_link_libraries(service ${catkin_LIBRARIES})

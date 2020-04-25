@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named service
+
+# Build rule for target.
+service: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 service
+.PHONY : service
+
+# fast build rule for target.
+service/fast:
+	$(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/build
+.PHONY : service/fast
+
+#=============================================================================
 # Target rules for targets named subscriber_obs
 
 # Build rule for target.
@@ -527,6 +540,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... service"
 	@echo "... subscriber_obs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"

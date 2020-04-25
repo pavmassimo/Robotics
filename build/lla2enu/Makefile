@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+lla2enu/CMakeFiles/service.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/service.dir/rule
+.PHONY : lla2enu/CMakeFiles/service.dir/rule
+
+# Convenience name for target.
+service: lla2enu/CMakeFiles/service.dir/rule
+
+.PHONY : service
+
+# fast build rule for target.
+service/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/build
+.PHONY : service/fast
+
+# Convenience name for target.
 lla2enu/CMakeFiles/subscriber_obs.dir/rule:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/subscriber_obs.dir/rule
 .PHONY : lla2enu/CMakeFiles/subscriber_obs.dir/rule
@@ -422,6 +437,33 @@ std_msgs_generate_messages_py/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/std_msgs_generate_messages_py.dir/build.make lla2enu/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/service.o: src/service.cpp.o
+
+.PHONY : src/service.o
+
+# target to build an object file
+src/service.cpp.o:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.o
+.PHONY : src/service.cpp.o
+
+src/service.i: src/service.cpp.i
+
+.PHONY : src/service.i
+
+# target to preprocess a source file
+src/service.cpp.i:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.i
+.PHONY : src/service.cpp.i
+
+src/service.s: src/service.cpp.s
+
+.PHONY : src/service.s
+
+# target to generate assembly for a file
+src/service.cpp.s:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.s
+.PHONY : src/service.cpp.s
+
 src/subscriber_front.o: src/subscriber_front.cpp.o
 
 .PHONY : src/subscriber_front.o
@@ -486,6 +528,7 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... service"
 	@echo "... subscriber_obs"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"
@@ -506,6 +549,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... src/service.o"
+	@echo "... src/service.i"
+	@echo "... src/service.s"
 	@echo "... src/subscriber_front.o"
 	@echo "... src/subscriber_front.i"
 	@echo "... src/subscriber_front.s"

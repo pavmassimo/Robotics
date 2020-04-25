@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/osboxes/Robotics/src/lla2enu/src/subscriber_obs.cpp
+/home/osboxes/Robotics/src/lla2enu/src/service.cpp
 ros/ros.h
 -
 std_msgs/String.h
