@@ -32,6 +32,15 @@ public:
     float longitude = msg->longitude;
     float h = msg->altitude;
 
+    if (latitude == 0 && longitude == 0 && h == 0){
+	std_msgs::Float64MultiArray output;
+    	output.data.push_back(NAN);
+    	output.data.push_back(NAN);
+    	output.data.push_back(NAN);
+    	pub_.publish(output);
+	return;
+    }
+
     // fixed position
     float latitude_init = 0.0;
     float longitude_init = 0.0;

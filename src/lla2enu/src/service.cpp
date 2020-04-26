@@ -22,32 +22,47 @@ public:
 
 	void callbackFront(const std_msgs::Float64MultiArray::ConstPtr& msg){
 		std::vector<double> data = msg -> data;
-		float xEastFront_ = data[0];
-		ROS_INFO("xEastFront_: [%f]", xEastFront_);
+		xEastFront_ = data[0];
+		yNorthFront_ = data[1];
+		zUpFront_ = data[2];
+		
+		calculateDistance();
 	  
 	  
 	}
 
 	void callbackObs(const std_msgs::Float64MultiArray::ConstPtr& msg){
-		/*data = msg.data
-		xEastObs_ = 
-		ROS_INFO("ENU position: [%f,%f, %f]", xEast, yNorth,zUp);
-	  */
+		std::vector<double> data = msg -> data;
+		xEastObs_ = data[0];
+		yNorthObs_ = data[1];
+		zUpObs_ = data[2]; 
 	  
 	}
 
 	void calculateDistance(){
-		float result = sqrt(pow((xEastFront_ - xEastObs_), 2) + pow((yNortFront_ - yNortObs_), 2) + pow((zUpFront_ - zUpObs_), 2)); 
 
-		ROS_INFO("%f", result);
+		if(xEastObs_){
+			if(!isnan(xEastObs_) && !isnan(xEastFront_)){
+				
+				float result = sqrt(pow((xEastFront_ - xEastObs_), 2) + pow((yNorthFront_ - yNorthObs_), 2) + pow((zUpFront_ - zUpObs_), 2)); 
+				ROS_INFO("%f", result);
+			}
+			else {
+				ROS_INFO("one value is NAN");
+			}
+		
+		}
+		else {
+			ROS_INFO("obs value still missing");
+		}
 	}
 
 private:
 	float xEastFront_;
-	float yNortFront_;
+	float yNorthFront_;
 	float zUpFront_;
 	float xEastObs_;
-	float yNortObs_;
+	float yNorthObs_;
 	float zUpObs_;
 
 	ros::NodeHandle n_; 

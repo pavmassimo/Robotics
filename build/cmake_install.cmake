@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/osboxes/Robotics/build/gtest/cmake_install.cmake")
   include("/home/osboxes/Robotics/build/lla2enu/cmake_install.cmake")
+  include("/home/osboxes/Robotics/build/tf_front/cmake_install.cmake")
 
 endif()
 
