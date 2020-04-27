@@ -207,5 +207,5 @@ include_directories(
 
 add_executable(tf_front_publisher src/tf_front_publisher.cpp)
 add_dependencies(tf_front_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} {catkin_EXPORTED_TARGETS}) 
-target_link_libraries(tf_front_publisher {catkin_LIBRARIES})
+target_link_libraries(tf_front_publisher  ${catkin_LIBRARIES})
 
