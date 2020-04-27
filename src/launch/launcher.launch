@@ -6,5 +6,7 @@
 	<node pkg="lla2enu" type="subscriber_front" name="subscriber_front" output="screen" />	
 	<node pkg="lla2enu" type="subscriber_obs" name="subscriber_obs" output="screen" />	
 	<node pkg="lla2enu" type="service" name="service" output="screen" />
+	<node pkg="tf_publisher" type="tf_front_publisher" name="tf_front_publisher" />
+	<node pkg="tf_publisher" type="tf_obs_publisher" name="tf_obs_publisher" />
 	<node pkg="rosbag" type="play" name="TEMP" args="--clock /home/osboxes/Robotics/src/project.bag" />
 </launch>

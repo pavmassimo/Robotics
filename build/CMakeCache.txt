@@ -414,6 +414,9 @@ sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for std_smgs.
+std_smgs_DIR:PATH=std_smgs_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/melodic/share/tf2/cmake
 
@@ -434,6 +437,12 @@ tf_front_BINARY_DIR:STATIC=/home/osboxes/Robotics/build/tf_front
 
 //Value Computed by CMake
 tf_front_SOURCE_DIR:STATIC=/home/osboxes/Robotics/src/tf_front
+
+//Value Computed by CMake
+tf_publisher_BINARY_DIR:STATIC=/home/osboxes/Robotics/build/tf_publisher
+
+//Value Computed by CMake
+tf_publisher_SOURCE_DIR:STATIC=/home/osboxes/Robotics/src/tf_publisher
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake

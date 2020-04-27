@@ -1,0 +1,8 @@
+prefix=/home/osboxes/Robotics/devel
+
+Name: tf_publisher
+Description: Description of tf_publisher
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
