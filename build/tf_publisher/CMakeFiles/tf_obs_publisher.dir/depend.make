@@ -6,14 +6,17 @@ tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ro
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/PointStamped.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Pose.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
+tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Quaternion.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/QuaternionStamped.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Transform.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/TransformStamped.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Twist.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/TwistStamped.h
+tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Vector3.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/geometry_msgs/Vector3Stamped.h
+tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/nav_msgs/Odometry.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/ros/advertise_options.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/ros/advertise_service_options.h
 tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o: /opt/ros/melodic/include/ros/assert.h

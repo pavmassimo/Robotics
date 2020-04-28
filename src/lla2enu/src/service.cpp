@@ -4,6 +4,7 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
+#include <nav_msgs/Odometry.h>
 
 
 class Service
@@ -20,22 +21,22 @@ public:
 		sub_obs_ = n_.subscribe("/obs_enu", 1000, &Service::callbackObs, this);
 	}
 
-	void callbackFront(const std_msgs::Float64MultiArray::ConstPtr& msg){
-		std::vector<double> data = msg -> data;
-		xEastFront_ = data[0];
-		yNorthFront_ = data[1];
-		zUpFront_ = data[2];
+	void callbackFront(const nav_msgs::Odometry::ConstPtr& msg){
+		
+		xEastFront_ = msg -> pose.pose.position.x;
+		yNorthFront_ = msg -> pose.pose.position.y;
+		zUpFront_ = msg -> pose.pose.position.z;
 		
 		calculateDistance();
 	  
 	  
 	}
 
-	void callbackObs(const std_msgs::Float64MultiArray::ConstPtr& msg){
-		std::vector<double> data = msg -> data;
-		xEastObs_ = data[0];
-		yNorthObs_ = data[1];
-		zUpObs_ = data[2]; 
+	void callbackObs(const nav_msgs::Odometry::ConstPtr& msg){
+		
+		xEastObs_ = msg -> pose.pose.position.x;
+		yNorthObs_ = msg -> pose.pose.position.y;
+		zUpObs_ = msg -> pose.pose.position.z;
 	  
 	}
 

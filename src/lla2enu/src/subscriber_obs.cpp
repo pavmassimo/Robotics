@@ -4,13 +4,15 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
+#include <nav_msgs/Odometry.h>
+
 class SubscribeAndPublish
 {
 public:
   SubscribeAndPublish()
   {
     //Topic you want to publish
-    pub_ = n_.advertise<std_msgs::Float64MultiArray>("/obs_enu", 1000);
+    pub_ = n_.advertise<nav_msgs::Odometry>("/obs_enu", 1000);
 
     //Topic you want to subscribe
     sub_ = n_.subscribe("/swiftnav/obs/gps_pose", 1000, &SubscribeAndPublish::callback, this);
@@ -33,10 +35,12 @@ public:
     float h = msg->altitude;
 
     if (latitude == 0 && longitude == 0 && h == 0){
-	std_msgs::Float64MultiArray output;
-    	output.data.push_back(NAN);
-    	output.data.push_back(NAN);
-    	output.data.push_back(NAN);
+	nav_msgs::Odometry output;
+	output.header.stamp = current_time_;
+	output.header.frame_id = "odom";
+    	output.pose.pose.position.x = NAN;
+    	output.pose.pose.position.y = NAN;
+    	output.pose.pose.position.z = NAN;
     	pub_.publish(output);
 	return;
     }
@@ -94,11 +98,12 @@ public:
 
     //ROS_INFO("ENU position: [%f,%f, %f]", xEast, yNorth,zUp);
 
-
-    std_msgs::Float64MultiArray output;
-    output.data.push_back(xEast);
-    output.data.push_back(yNorth);
-    output.data.push_back(zUp);
+    nav_msgs::Odometry output;
+    output.header.stamp = current_time_;
+    output.header.frame_id = "odom_obs";
+    output.pose.pose.position.x = xEast;
+    output.pose.pose.position.y = yNorth;
+    output.pose.pose.position.z = zUp;
     pub_.publish(output);
   }
 
@@ -107,14 +112,16 @@ private:
   ros::Publisher pub_;
   ros::Subscriber sub_;
 
-};//End of class SubscribeAndPublish
+  ros::Time current_time_ = ros::Time::now();
+
+};//End of class
 
 int main(int argc, char **argv)
 {
   //Initiate ROS
   ros::init(argc, argv, "listener");
 
-  //Create an object of class SubscribeAndPublish that will take care of everything
+  //Create an object of class 
   SubscribeAndPublish SAPObject;
 
   ros::spin();

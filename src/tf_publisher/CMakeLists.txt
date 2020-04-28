@@ -205,10 +205,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(tf_front_publisher src/tf_front_publisher.cpp)
-add_dependencies(tf_front_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} {catkin_EXPORTED_TARGETS}) 
-target_link_libraries(tf_front_publisher  ${catkin_LIBRARIES})
+add_executable(tf_publisher src/tf_publisher.cpp)
+add_dependencies(tf_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} {catkin_EXPORTED_TARGETS}) 
+target_link_libraries(tf_publisher  ${catkin_LIBRARIES})
 
-add_executable(tf_obs_publisher src/tf_obs_publisher.cpp)
-add_dependencies(tf_obs_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} {catkin_EXPORTED_TARGETS}) 
-target_link_libraries(tf_obs_publisher  ${catkin_LIBRARIES})

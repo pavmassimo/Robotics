@@ -844,6 +844,19 @@ actionlib_msgs_generate_messages_eus/fast:
 .PHONY : actionlib_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named tf_publisher
+
+# Build rule for target.
+tf_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_publisher
+.PHONY : tf_publisher
+
+# fast build rule for target.
+tf_publisher/fast:
+	$(MAKE) -f tf_publisher/CMakeFiles/tf_publisher.dir/build.make tf_publisher/CMakeFiles/tf_publisher.dir/build
+.PHONY : tf_publisher/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -855,19 +868,6 @@ actionlib_msgs_generate_messages_lisp: cmake_check_build_system
 actionlib_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named tf_obs_publisher
-
-# Build rule for target.
-tf_obs_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_obs_publisher
-.PHONY : tf_obs_publisher
-
-# fast build rule for target.
-tf_obs_publisher/fast:
-	$(MAKE) -f tf_publisher/CMakeFiles/tf_obs_publisher.dir/build.make tf_publisher/CMakeFiles/tf_obs_publisher.dir/build
-.PHONY : tf_obs_publisher/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_py
@@ -894,19 +894,6 @@ tf2_msgs_generate_messages_cpp: cmake_check_build_system
 tf2_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f tf_publisher/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make tf_publisher/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
 .PHONY : tf2_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named tf_front_publisher
-
-# Build rule for target.
-tf_front_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_front_publisher
-.PHONY : tf_front_publisher
-
-# fast build rule for target.
-tf_front_publisher/fast:
-	$(MAKE) -f tf_publisher/CMakeFiles/tf_front_publisher.dir/build.make tf_publisher/CMakeFiles/tf_front_publisher.dir/build
-.PHONY : tf_front_publisher/fast
 
 #=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_py
@@ -999,11 +986,10 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... tf_publisher"
 	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... tf_obs_publisher"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... tf_front_publisher"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
 .PHONY : help

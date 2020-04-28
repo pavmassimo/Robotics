@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -100,6 +88,18 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -543,6 +543,21 @@ actionlib_msgs_generate_messages_eus/fast:
 .PHONY : actionlib_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+tf_publisher/CMakeFiles/tf_publisher.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 tf_publisher/CMakeFiles/tf_publisher.dir/rule
+.PHONY : tf_publisher/CMakeFiles/tf_publisher.dir/rule
+
+# Convenience name for target.
+tf_publisher: tf_publisher/CMakeFiles/tf_publisher.dir/rule
+
+.PHONY : tf_publisher
+
+# fast build rule for target.
+tf_publisher/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_publisher.dir/build.make tf_publisher/CMakeFiles/tf_publisher.dir/build
+.PHONY : tf_publisher/fast
+
+# Convenience name for target.
 tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 .PHONY : tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
@@ -556,21 +571,6 @@ actionlib_msgs_generate_messages_lisp: tf_publisher/CMakeFiles/actionlib_msgs_ge
 actionlib_msgs_generate_messages_lisp/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-tf_publisher/CMakeFiles/tf_obs_publisher.dir/rule:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 tf_publisher/CMakeFiles/tf_obs_publisher.dir/rule
-.PHONY : tf_publisher/CMakeFiles/tf_obs_publisher.dir/rule
-
-# Convenience name for target.
-tf_obs_publisher: tf_publisher/CMakeFiles/tf_obs_publisher.dir/rule
-
-.PHONY : tf_obs_publisher
-
-# fast build rule for target.
-tf_obs_publisher/fast:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_obs_publisher.dir/build.make tf_publisher/CMakeFiles/tf_obs_publisher.dir/build
-.PHONY : tf_obs_publisher/fast
 
 # Convenience name for target.
 tf_publisher/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
@@ -603,21 +603,6 @@ tf2_msgs_generate_messages_cpp/fast:
 .PHONY : tf2_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-tf_publisher/CMakeFiles/tf_front_publisher.dir/rule:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 tf_publisher/CMakeFiles/tf_front_publisher.dir/rule
-.PHONY : tf_publisher/CMakeFiles/tf_front_publisher.dir/rule
-
-# Convenience name for target.
-tf_front_publisher: tf_publisher/CMakeFiles/tf_front_publisher.dir/rule
-
-.PHONY : tf_front_publisher
-
-# fast build rule for target.
-tf_front_publisher/fast:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_front_publisher.dir/build.make tf_publisher/CMakeFiles/tf_front_publisher.dir/build
-.PHONY : tf_front_publisher/fast
-
-# Convenience name for target.
 tf_publisher/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 tf_publisher/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : tf_publisher/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
@@ -647,59 +632,32 @@ tf2_msgs_generate_messages_lisp/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make tf_publisher/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
 
-src/tf_front_publisher.o: src/tf_front_publisher.cpp.o
+src/tf_publisher.o: src/tf_publisher.cpp.o
 
-.PHONY : src/tf_front_publisher.o
-
-# target to build an object file
-src/tf_front_publisher.cpp.o:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_front_publisher.dir/build.make tf_publisher/CMakeFiles/tf_front_publisher.dir/src/tf_front_publisher.cpp.o
-.PHONY : src/tf_front_publisher.cpp.o
-
-src/tf_front_publisher.i: src/tf_front_publisher.cpp.i
-
-.PHONY : src/tf_front_publisher.i
-
-# target to preprocess a source file
-src/tf_front_publisher.cpp.i:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_front_publisher.dir/build.make tf_publisher/CMakeFiles/tf_front_publisher.dir/src/tf_front_publisher.cpp.i
-.PHONY : src/tf_front_publisher.cpp.i
-
-src/tf_front_publisher.s: src/tf_front_publisher.cpp.s
-
-.PHONY : src/tf_front_publisher.s
-
-# target to generate assembly for a file
-src/tf_front_publisher.cpp.s:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_front_publisher.dir/build.make tf_publisher/CMakeFiles/tf_front_publisher.dir/src/tf_front_publisher.cpp.s
-.PHONY : src/tf_front_publisher.cpp.s
-
-src/tf_obs_publisher.o: src/tf_obs_publisher.cpp.o
-
-.PHONY : src/tf_obs_publisher.o
+.PHONY : src/tf_publisher.o
 
 # target to build an object file
-src/tf_obs_publisher.cpp.o:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_obs_publisher.dir/build.make tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.o
-.PHONY : src/tf_obs_publisher.cpp.o
+src/tf_publisher.cpp.o:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_publisher.dir/build.make tf_publisher/CMakeFiles/tf_publisher.dir/src/tf_publisher.cpp.o
+.PHONY : src/tf_publisher.cpp.o
 
-src/tf_obs_publisher.i: src/tf_obs_publisher.cpp.i
+src/tf_publisher.i: src/tf_publisher.cpp.i
 
-.PHONY : src/tf_obs_publisher.i
+.PHONY : src/tf_publisher.i
 
 # target to preprocess a source file
-src/tf_obs_publisher.cpp.i:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_obs_publisher.dir/build.make tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.i
-.PHONY : src/tf_obs_publisher.cpp.i
+src/tf_publisher.cpp.i:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_publisher.dir/build.make tf_publisher/CMakeFiles/tf_publisher.dir/src/tf_publisher.cpp.i
+.PHONY : src/tf_publisher.cpp.i
 
-src/tf_obs_publisher.s: src/tf_obs_publisher.cpp.s
+src/tf_publisher.s: src/tf_publisher.cpp.s
 
-.PHONY : src/tf_obs_publisher.s
+.PHONY : src/tf_publisher.s
 
 # target to generate assembly for a file
-src/tf_obs_publisher.cpp.s:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_obs_publisher.dir/build.make tf_publisher/CMakeFiles/tf_obs_publisher.dir/src/tf_obs_publisher.cpp.s
-.PHONY : src/tf_obs_publisher.cpp.s
+src/tf_publisher.cpp.s:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f tf_publisher/CMakeFiles/tf_publisher.dir/build.make tf_publisher/CMakeFiles/tf_publisher.dir/src/tf_publisher.cpp.s
+.PHONY : src/tf_publisher.cpp.s
 
 # Help Target
 help:
@@ -707,7 +665,6 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... install/local"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
@@ -722,6 +679,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... tf_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... install"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -738,20 +696,16 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... tf_publisher"
 	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... tf_obs_publisher"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... tf_front_publisher"
 	@echo "... install/strip"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... src/tf_front_publisher.o"
-	@echo "... src/tf_front_publisher.i"
-	@echo "... src/tf_front_publisher.s"
-	@echo "... src/tf_obs_publisher.o"
-	@echo "... src/tf_obs_publisher.i"
-	@echo "... src/tf_obs_publisher.s"
+	@echo "... src/tf_publisher.o"
+	@echo "... src/tf_publisher.i"
+	@echo "... src/tf_publisher.s"
 .PHONY : help
 
 
