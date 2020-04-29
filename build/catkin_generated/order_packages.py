@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = '/home/osboxes/Robotics/src'
-whitelisted_packages = ''.split(';') if '' != '' else []
-blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/melodic'.split(';') if '/opt/ros/melodic' != '' else []
+source_root_dir = "/home/osboxes/Robotics/src"
+whitelisted_packages = "".split(';') if "" != "" else []
+blacklisted_packages = "".split(';') if "" != "" else []
+underlay_workspaces = "/home/osboxes/Robotics/devel;/home/osboxes/robotics/devel;/opt/ros/melodic".split(';') if "/home/osboxes/Robotics/devel;/home/osboxes/robotics/devel;/opt/ros/melodic" != "" else []

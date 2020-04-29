@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("lla2enu")
+subdirs("message_filters")
 subdirs("tf_publisher")
