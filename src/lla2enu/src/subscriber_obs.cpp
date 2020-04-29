@@ -1,27 +1,25 @@
 #include <ros/ros.h>
 #include "std_msgs/String.h"
-#include "std_msgs/Float64.h"
-#include "std_msgs/Float64MultiArray.h"
 #include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
-#include <nav_msgs/Odometry.h>
+#include "geometry_msgs/Vector3Stamped.h"
 
 class SubscribeAndPublish
 {
 public:
   SubscribeAndPublish()
   {
+
     //Topic you want to publish
-    pub_ = n_.advertise<nav_msgs::Odometry>("/obs_enu", 1000);
+    pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/obs_enu", 1000);
 
     //Topic you want to subscribe
     sub_ = n_.subscribe("/swiftnav/obs/gps_pose", 1000, &SubscribeAndPublish::callback, this);
+
   }
 
   void callback(const sensor_msgs::NavSatFix::ConstPtr& msg){
     //ROS_INFO("Input position: [%f,%f, %f]", msg->latitude, msg->longitude,msg->altitude);
-
-    ros::Time current_time = ros::Time::now();
 
     // fixed values
 
@@ -35,14 +33,18 @@ public:
     float latitude = msg->latitude;
     float longitude = msg->longitude;
     float h = msg->altitude;
+  
+    ros::Time current_time = msg -> header.stamp;
 
+    geometry_msgs::Vector3Stamped output;
+
+    // if the message is formed of only 0, we publish an empty message since it means the gps has dropped
     if (latitude == 0 && longitude == 0 && h == 0){
-	nav_msgs::Odometry output;
 	output.header.stamp = current_time;
 	output.header.frame_id = "odom";
-    	output.pose.pose.position.x = NAN;
-    	output.pose.pose.position.y = NAN;
-    	output.pose.pose.position.z = NAN;
+    	output.vector.x = NAN;
+    	output.vector.y = NAN;
+    	output.vector.z = NAN;
     	pub_.publish(output);
 	return;
     }
@@ -100,13 +102,12 @@ public:
 
     //ROS_INFO("ENU position: [%f,%f, %f]", xEast, yNorth,zUp);
 
-    nav_msgs::Odometry output;
+    // preparing the message to publish
     output.header.stamp = current_time;
-    output.header.frame_id = "odom_obs";
-    output.pose.pose.position.x = xEast;
-    output.pose.pose.position.y = yNorth;
-    output.pose.pose.position.z = zUp;
-    output.pose.pose.orientation.w = 1;
+    output.header.frame_id = "obs_enu";
+    output.vector.x = xEast;
+    output.vector.y = yNorth;
+    output.vector.z = zUp;
     pub_.publish(output);
   }
 

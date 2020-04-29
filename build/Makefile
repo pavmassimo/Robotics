@@ -584,45 +584,6 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named filter_subscriber
-
-# Build rule for target.
-filter_subscriber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 filter_subscriber
-.PHONY : filter_subscriber
-
-# fast build rule for target.
-filter_subscriber/fast:
-	$(MAKE) -f message_filters/CMakeFiles/filter_subscriber.dir/build.make message_filters/CMakeFiles/filter_subscriber.dir/build
-.PHONY : filter_subscriber/fast
-
-#=============================================================================
-# Target rules for targets named multi_publisher
-
-# Build rule for target.
-multi_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 multi_publisher
-.PHONY : multi_publisher
-
-# fast build rule for target.
-multi_publisher/fast:
-	$(MAKE) -f message_filters/CMakeFiles/multi_publisher.dir/build.make message_filters/CMakeFiles/multi_publisher.dir/build
-.PHONY : multi_publisher/fast
-
-#=============================================================================
-# Target rules for targets named filter_subscriber_policy
-
-# Build rule for target.
-filter_subscriber_policy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 filter_subscriber_policy
-.PHONY : filter_subscriber_policy
-
-# fast build rule for target.
-filter_subscriber_policy/fast:
-	$(MAKE) -f message_filters/CMakeFiles/filter_subscriber_policy.dir/build.make message_filters/CMakeFiles/filter_subscriber_policy.dir/build
-.PHONY : filter_subscriber_policy/fast
-
-#=============================================================================
 # Target rules for targets named tf_publisher
 
 # Build rule for target.
@@ -1005,9 +966,6 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... filter_subscriber"
-	@echo "... multi_publisher"
-	@echo "... filter_subscriber_policy"
 	@echo "... tf_publisher"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_cpp"
