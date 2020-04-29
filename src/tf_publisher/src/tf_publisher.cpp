@@ -25,6 +25,7 @@ public:
 		float xEast = msg -> vector.x;
 		float yNorth = msg -> vector.y;
 		float zUp = msg -> vector.z;
+		ros::Time current_time = msg -> header.stamp;
 
 		// if the message is empty, we don't publish odometry or tf
 		if(isnan(xEast)){
@@ -54,6 +55,7 @@ public:
 		float xEast = msg -> vector.x;
 		float yNorth = msg -> vector.y;
 		float zUp = msg -> vector.z;
+		ros::Time current_time = msg -> header.stamp;
 		
 		// if the message is empty, we don't publish odometry or tf	
 		if(isnan(xEast)){
@@ -67,7 +69,6 @@ public:
 		output.pose.pose.position.x = xEast;
 		output.pose.pose.position.y = yNorth;
 		output.pose.pose.position.z = zUp;
-		output.pose.orientation = 1
 		pubObs_.publish(output);
 
 		// Publish TF obs

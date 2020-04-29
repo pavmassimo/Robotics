@@ -52,11 +52,6 @@ int main(int argc, char** argv)
 	message_filters::Subscriber<geometry_msgs::Vector3Stamped> sub_front(n_, "/front_enu", 10000);
 	message_filters::Subscriber<geometry_msgs::Vector3Stamped> sub_obs(n_, "/obs_enu", 10000);
 
-	ros::Subscriber sub1_, sub2_;
-
-	sub1_ = n_.subscribe("/front_enu", 1000, &callbackFront);
-	sub2_ = n_.subscribe("/obs_enu", 1000, &callbackSub);
-
 	typedef message_filters::sync_policies::ApproximateTime<geometry_msgs::Vector3Stamped, geometry_msgs::Vector3Stamped> MySyncPolicy;
 	message_filters::Synchronizer<MySyncPolicy> sync(MySyncPolicy(100000), sub_front, sub_obs);
 	sync.registerCallback(boost::bind(&callback, _1, _2));
