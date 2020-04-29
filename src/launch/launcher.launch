@@ -2,10 +2,16 @@
 	<param name="starting_latitude_init" value="45.621668" />
 	<param name="starting_longitude_init" value="9.281553" />
 	<param name="starting_h0_init" value="224.573796" />
+	
+	<param name="crash" value="2" />
+	<param name="unsafe" value="5" />
 
 	<node pkg="lla2enu" type="subscriber_front" name="subscriber_front" output="screen" />	
 	<node pkg="lla2enu" type="subscriber_obs" name="subscriber_obs" output="screen" />	
 	<node pkg="lla2enu" type="service" name="service" output="screen" />
+	<node pkg="lla2enu" type="dynamic_reconfigure" name="dynamic_reconfigure" output="screen" />
+
 	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher" />
+
 	<node pkg="rosbag" type="play" name="TEMP" args="--clock /home/osboxes/Robotics/src/project.bag" />
 </launch>

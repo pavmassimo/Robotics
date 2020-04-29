@@ -74,8 +74,6 @@ tf_publisher/CMakeFiles/tf_publisher.dir/src/tf_publisher.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
- /opt/ros/melodic/include/sensor_msgs/NavSatFix.h
- /opt/ros/melodic/include/sensor_msgs/NavSatStatus.h
  /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/tf/LinearMath/Matrix3x3.h

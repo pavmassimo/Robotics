@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -211,4 +212,4 @@ add_executable(service src/service.cpp)
 
 target_link_libraries(subscriber_front ${catkin_LIBRARIES})
 target_link_libraries(subscriber_obs ${catkin_LIBRARIES})
-target_link_libraries(service ${catkin_LIBRARIES})
+target_link_libraries(service ${catkin_LIBRARIES} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY})

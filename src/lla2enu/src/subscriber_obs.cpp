@@ -21,6 +21,8 @@ public:
   void callback(const sensor_msgs::NavSatFix::ConstPtr& msg){
     //ROS_INFO("Input position: [%f,%f, %f]", msg->latitude, msg->longitude,msg->altitude);
 
+    ros::Time current_time = ros::Time::now();
+
     // fixed values
 
     double a = 6378137;
@@ -36,7 +38,7 @@ public:
 
     if (latitude == 0 && longitude == 0 && h == 0){
 	nav_msgs::Odometry output;
-	output.header.stamp = current_time_;
+	output.header.stamp = current_time;
 	output.header.frame_id = "odom";
     	output.pose.pose.position.x = NAN;
     	output.pose.pose.position.y = NAN;
@@ -99,11 +101,12 @@ public:
     //ROS_INFO("ENU position: [%f,%f, %f]", xEast, yNorth,zUp);
 
     nav_msgs::Odometry output;
-    output.header.stamp = current_time_;
+    output.header.stamp = current_time;
     output.header.frame_id = "odom_obs";
     output.pose.pose.position.x = xEast;
     output.pose.pose.position.y = yNorth;
     output.pose.pose.position.z = zUp;
+    output.pose.pose.orientation.w = 1;
     pub_.publish(output);
   }
 

@@ -2,7 +2,6 @@
 #include "turtlesim/Pose.h"
 #include <tf/transform_broadcaster.h>
 #include "std_msgs/String.h"
-#include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
 #include <nav_msgs/Odometry.h>
 
