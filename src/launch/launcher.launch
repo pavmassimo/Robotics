@@ -5,9 +5,13 @@
 	
 	<param name="crash" value="2" />
 	<param name="unsafe" value="5" />
+  	<arg name="role" /> 
 
-	<node pkg="lla2enu" type="subscriber_front" name="subscriber_front" output="screen" />	
-	<node pkg="lla2enu" type="subscriber_obs" name="subscriber_obs" output="screen" />
+	<node pkg="lla2enu" type="subscriber_front" name="subscriber_front" output="screen" args = "front"/> 
+	
+
+
+	<node pkg="lla2enu" type="subscriber_front" name="subscriber_obs" output="screen" args = "obs"> </node>
 
 	<node pkg="lla2enu" type="service" name="service" output="screen" />
 

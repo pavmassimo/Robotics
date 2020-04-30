@@ -3,18 +3,25 @@
 #include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
 #include "geometry_msgs/Vector3Stamped.h"
+#include <iostream>
+#include <string>
 
 class SubscribeAndPublish
 {
 public:
-  SubscribeAndPublish()
+  SubscribeAndPublish(std::string arg)
   {
+    //n_.getParam("/role", role);
+    role = arg.c_str();
+
+    ROS_INFO("role: [%s]", role.c_str());
     //Topic you want to publish
-    pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/front_enu", 1000);
+    pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/" + role + "_enu", 1000);
 
     //Topic you want to subscribe
-    sub_ = n_.subscribe("/swiftnav/front/gps_pose", 1000, &SubscribeAndPublish::callback, this);
+    sub_ = n_.subscribe("/swiftnav/"+ role + "/gps_pose", 1000, &SubscribeAndPublish::callback, this);
   }
+
 
   void callback(const sensor_msgs::NavSatFix::ConstPtr& msg){
     //ROS_INFO("Input position: [%f,%f, %f]", msg->latitude, msg->longitude,msg->altitude);
@@ -102,7 +109,7 @@ public:
 
     // preparing the message to publish
     output.header.stamp = current_time;
-    output.header.frame_id = "front_enu";
+    output.header.frame_id = role + "_enu";
     output.vector.x = xEast;
     output.vector.y = yNorth;
     output.vector.z = zUp;
@@ -113,6 +120,8 @@ private:
   ros::NodeHandle n_; 
   ros::Publisher pub_;
   ros::Subscriber sub_;
+  
+  std::string role;
 
 };//End of class
 
@@ -122,7 +131,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "listener");
 
   //Create an object of class 
-  SubscribeAndPublish SAPObject;
+  SubscribeAndPublish SAPObject(argv[1]);
 
   ros::spin();
 

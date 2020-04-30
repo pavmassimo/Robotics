@@ -17,6 +17,10 @@ math.h
 -
 geometry_msgs/Vector3Stamped.h
 /home/osboxes/Robotics/src/lla2enu/src/geometry_msgs/Vector3Stamped.h
+iostream
+-
+string
+-
 
 /opt/ros/melodic/include/geometry_msgs/Vector3.h
 string

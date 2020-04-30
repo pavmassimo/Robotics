@@ -93,6 +93,7 @@ service_EXTERNAL_OBJECTS =
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /opt/ros/melodic/lib/libmessage_filters.so
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /opt/ros/melodic/lib/libroscpp.so
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/osboxes/Robotics/devel/lib/lla2enu/service: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /opt/ros/melodic/lib/libroscpp_serialization.so
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/osboxes/Robotics/devel/lib/lla2enu/service: /opt/ros/melodic/lib/librosconsole.so
