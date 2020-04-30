@@ -12,14 +12,14 @@ public:
   SubscribeAndPublish(std::string arg)
   {
     //n_.getParam("/role", role);
-    role = arg.c_str();
+    role_ = arg.c_str();
 
-    ROS_INFO("role: [%s]", role.c_str());
+    //ROS_INFO("role: [%s]", role_.c_str());
     //Topic you want to publish
-    pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/" + role + "_enu", 1000);
+    pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/" + role_ + "_enu", 1000);
 
     //Topic you want to subscribe
-    sub_ = n_.subscribe("/swiftnav/"+ role + "/gps_pose", 1000, &SubscribeAndPublish::callback, this);
+    sub_ = n_.subscribe("/swiftnav/"+ role_ + "/gps_pose", 1000, &SubscribeAndPublish::callback, this);
   }
 
 
@@ -109,7 +109,7 @@ public:
 
     // preparing the message to publish
     output.header.stamp = current_time;
-    output.header.frame_id = role + "_enu";
+    output.header.frame_id = role_ + "_enu";
     output.vector.x = xEast;
     output.vector.y = yNorth;
     output.vector.z = zUp;
@@ -121,7 +121,7 @@ private:
   ros::Publisher pub_;
   ros::Subscriber sub_;
   
-  std::string role;
+  std::string role_;
 
 };//End of class
 

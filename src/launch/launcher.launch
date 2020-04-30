@@ -5,17 +5,16 @@
 	
 	<param name="crash" value="2" />
 	<param name="unsafe" value="5" />
-  	<arg name="role" /> 
 
 	<node pkg="lla2enu" type="subscriber_front" name="subscriber_front" output="screen" args = "front"/> 
-	
-
 
 	<node pkg="lla2enu" type="subscriber_front" name="subscriber_obs" output="screen" args = "obs"> </node>
 
 	<node pkg="lla2enu" type="service" name="service" output="screen" />
 
-	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher" output="screen" />
+	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher_front" output="screen" args = "front" />
+
+	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher_obs" output="screen" args = "obs" />
 
 	<node pkg="rosbag" type="play" name="TEMP" args="--clock /home/osboxes/Robotics/src/project.bag" />
 </launch>
