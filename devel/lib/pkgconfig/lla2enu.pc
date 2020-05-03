@@ -3,6 +3,6 @@ prefix=/home/osboxes/Robotics/devel
 Name: lla2enu
 Description: Description of lla2enu
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/osboxes/Robotics/devel/include
 Libs: -L${prefix}/lib 
-Requires: geometry_msgs message_filters
+Requires: geometry_msgs message_filters message_runtime

@@ -1,0 +1,7 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~unsafe" : \b [int] parameter over which unsafe min: 0, default: 1, max: 100
+- \b "~safe" : \b [int] parameter over which safe min: 0, default: 5, max: 100
+

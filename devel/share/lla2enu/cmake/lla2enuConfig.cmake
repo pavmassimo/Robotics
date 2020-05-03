@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(lla2enu_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/osboxes/Robotics/devel/include " STREQUAL " ")
   set(lla2enu_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/osboxes/Robotics/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/osboxes/Robotics/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/osboxes/Robotics/devel/lib;/home/osboxes/Robotics/devel/lib;/home/osboxes/robotics/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(lla2enu_EXPORTED_TARGETS "")
+set(lla2enu_EXPORTED_TARGETS "lla2enu_generate_messages_cpp;lla2enu_generate_messages_eus;lla2enu_generate_messages_lisp;lla2enu_generate_messages_nodejs;lla2enu_generate_messages_py;lla2enu_gencfg")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${lla2enu_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${lla2enu_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;message_filters")
+set(depends "geometry_msgs;message_filters;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND lla2enu_EXPORTED_TARGETS ${${lla2enu_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "lla2enu-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${lla2enu_DIR}/${extra})

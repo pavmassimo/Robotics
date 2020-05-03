@@ -93,13 +93,15 @@ subscriber_front_EXTERNAL_OBJECTS =
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libmessage_filters.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libroscpp.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/librosconsole.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/librosconsole_backend_interface.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libroscpp_serialization.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/librostime.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /opt/ros/melodic/lib/libcpp_common.so
 /home/osboxes/Robotics/devel/lib/lla2enu/subscriber_front: /usr/lib/x86_64-linux-gnu/libboost_system.so

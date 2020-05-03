@@ -17,13 +17,13 @@ public:
 		sub_ = n_.subscribe("/" + role_ + "_enu", 1000, &tf_publisher::callback, this);
 
 		// create the publisher to publish the odometry message of both front and obs
-		pub_ = n_.advertise<nav_msgs::Odometry>("/" + role_ + "_odometry", 1000);
+		//pub_ = n_.advertise<nav_msgs::Odometry>("/" + role_ + "_odometry", 1000);
 	}
 
-	void callback(const geometry_msgs::Vector3Stamped::ConstPtr& msg){
-		float xEast = msg -> vector.x;
-		float yNorth = msg -> vector.y;
-		float zUp = msg -> vector.z;
+	void callback(const nav_msgs::Odometry::ConstPtr& msg){
+		float xEast = msg -> pose.pose.position.x;
+		float yNorth = msg -> pose.pose.position.y;
+		float zUp = msg -> pose.pose.position.z;
 		ros::Time current_time = msg -> header.stamp;
 		
 		// if the message is empty, we don't publish odometry or tf	
@@ -31,15 +31,7 @@ public:
 			return;
 		}
 
-		// Publish Odometry obs
-		nav_msgs::Odometry output;
-		output.header.stamp = current_time;
-		output.header.frame_id = "odom_" + role_;
-		output.pose.pose.position.x = xEast;
-		output.pose.pose.position.y = yNorth;
-		output.pose.pose.position.z = zUp;
-
-		pub_.publish(output);
+		//pub_.publish(output);
 
 		// Publish TF obs
 		tf::Transform transform;
@@ -55,13 +47,13 @@ private:
 	ros::NodeHandle n_;
 	tf::TransformBroadcaster br_;
 	ros::Subscriber sub_;
-	ros::Publisher pub_;
+	//ros::Publisher pub_;
 	std::string role_;
 };
 
 int main(int argc, char **argv)
 {
-	ros::init(argc, argv, "listener");
+	ros::init(argc, argv, "tf_node");
 	tf_publisher my_tf_publisher(argv[1]);
 	ros::spin();
 	return 0;

@@ -2,8 +2,8 @@
 #include "std_msgs/String.h"
 #include "sensor_msgs/NavSatFix.h"
 #include <math.h>  
-#include "geometry_msgs/Vector3Stamped.h"
 #include <iostream>
+#include <nav_msgs/Odometry.h>
 #include <string>
 
 class SubscribeAndPublish
@@ -15,7 +15,7 @@ public:
 		role_ = arg.c_str();
 
 		//Topic you want to publish
-		pub_ = n_.advertise<geometry_msgs::Vector3Stamped>("/" + role_ + "_enu", 1000);
+		pub_ = n_.advertise<nav_msgs::Odometry>("/" + role_ + "_enu", 1000);
 
 		//Topic you want to subscribe
 		sub_ = n_.subscribe("/swiftnav/"+ role_ + "/gps_pose", 1000, &SubscribeAndPublish::callback, this);
@@ -40,18 +40,18 @@ public:
 		float h = msg->altitude;
 
 		ros::Time current_time = msg -> header.stamp;
-
-		geometry_msgs::Vector3Stamped output;
+		
+		nav_msgs::Odometry output;
 
 		// if the message is formed of only 0, we publish an empty message since it means the gps has dropped
 		if (latitude == 0 && longitude == 0 && h == 0){
-		output.header.stamp = current_time;
-		output.header.frame_id = "odom";
-		output.vector.x = NAN;
-		output.vector.y = NAN;
-		output.vector.z = NAN;
-		pub_.publish(output);
-		return;
+			output.header.stamp = current_time;
+			output.header.frame_id = role_ + "_enu";
+			output.pose.pose.position.x = NAN;
+			output.pose.pose.position.y = NAN;
+			output.pose.pose.position.z = NAN;
+			pub_.publish(output);
+			return;
 		}
 
 		// fixed position
@@ -110,10 +110,12 @@ public:
 		// preparing the message to publish
 		output.header.stamp = current_time;
 		output.header.frame_id = role_ + "_enu";
-		output.vector.x = xEast;
-		output.vector.y = yNorth;
-		output.vector.z = zUp;
+		output.pose.pose.position.x = xEast;
+		output.pose.pose.position.y = yNorth;
+		output.pose.pose.position.z = zUp;
+		output.pose.pose.orientation.w = 1;
 		pub_.publish(output);
+
 	}
 
 private:
@@ -128,7 +130,7 @@ private:
 int main(int argc, char **argv)
 {
 	//Initiate ROS
-	ros::init(argc, argv, "listener");
+	ros::init(argc, argv, "man_in_the_middle");
 
 	//Create an object of class 
 	SubscribeAndPublish SAPObject(argv[1]);

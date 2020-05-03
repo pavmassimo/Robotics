@@ -1,0 +1,8 @@
+\subsubsection usage Usage
+\verbatim
+<node name="slider_reconfigure" pkg="slider_reconfigure" type="slider_reconfigure">
+  <param name="unsafe" type="int" value="1" />
+  <param name="safe" type="int" value="5" />
+</node>
+\endverbatim
+
