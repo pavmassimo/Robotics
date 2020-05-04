@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/osboxes/Robotics/src/lla2enu/msg/custom_msg.msg"
-services_str = ""
+services_str = "/home/osboxes/Robotics/src/lla2enu/srv/distance.srv"
 pkg_name = "lla2enu"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

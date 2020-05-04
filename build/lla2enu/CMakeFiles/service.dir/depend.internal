@@ -3,6 +3,9 @@
 
 lla2enu/CMakeFiles/service.dir/src/service.cpp.o
  /home/osboxes/Robotics/devel/include/lla2enu/custom_msg.h
+ /home/osboxes/Robotics/devel/include/lla2enu/distance.h
+ /home/osboxes/Robotics/devel/include/lla2enu/distanceRequest.h
+ /home/osboxes/Robotics/devel/include/lla2enu/distanceResponse.h
  /home/osboxes/Robotics/devel/include/lla2enu/sliderConfig.h
  /home/osboxes/Robotics/src/lla2enu/src/service.cpp
  /opt/ros/melodic/include/dynamic_reconfigure/BoolParameter.h

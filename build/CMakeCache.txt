@@ -427,6 +427,12 @@ rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
 
 //Value Computed by CMake
+service_BINARY_DIR:STATIC=/home/osboxes/Robotics/build/service
+
+//Value Computed by CMake
+service_SOURCE_DIR:STATIC=/home/osboxes/Robotics/src/service
+
+//Value Computed by CMake
 slider_reconfigure_BINARY_DIR:STATIC=/home/osboxes/Robotics/build/slider_reconfigure
 
 slider_reconfigure_DIR:PATH=

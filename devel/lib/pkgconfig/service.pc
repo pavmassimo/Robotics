@@ -1,0 +1,8 @@
+prefix=/home/osboxes/Robotics/devel
+
+Name: service
+Description: Description of service
+Version: 0.0.0
+Cflags: -I/home/osboxes/Robotics/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

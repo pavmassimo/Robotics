@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lla2enu_generate_messages_cpp"
   "/home/osboxes/Robotics/devel/include/lla2enu/custom_msg.h"
+  "/home/osboxes/Robotics/devel/include/lla2enu/distance.h"
 )
 
 # Per-language clean rules from dependency scanning.

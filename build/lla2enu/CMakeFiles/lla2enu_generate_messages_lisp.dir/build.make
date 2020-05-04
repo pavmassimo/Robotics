@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 include lla2enu/CMakeFiles/lla2enu_generate_messages_lisp.dir/progress.make
 
 lla2enu/CMakeFiles/lla2enu_generate_messages_lisp: /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/msg/custom_msg.lisp
+lla2enu/CMakeFiles/lla2enu_generate_messages_lisp: /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/srv/distance.lisp
 
 
 /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/msg/custom_msg.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
@@ -61,8 +62,14 @@ lla2enu/CMakeFiles/lla2enu_generate_messages_lisp: /home/osboxes/Robotics/devel/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from lla2enu/custom_msg.msg"
 	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/osboxes/Robotics/src/lla2enu/msg/custom_msg.msg -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/msg
 
+/home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/srv/distance.lisp: /opt/ros/melodic/lib/genlisp/gen_lisp.py
+/home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/srv/distance.lisp: /home/osboxes/Robotics/src/lla2enu/srv/distance.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from lla2enu/distance.srv"
+	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/osboxes/Robotics/src/lla2enu/srv/distance.srv -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/srv
+
 lla2enu_generate_messages_lisp: lla2enu/CMakeFiles/lla2enu_generate_messages_lisp
 lla2enu_generate_messages_lisp: /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/msg/custom_msg.lisp
+lla2enu_generate_messages_lisp: /home/osboxes/Robotics/devel/share/common-lisp/ros/lla2enu/srv/distance.lisp
 lla2enu_generate_messages_lisp: lla2enu/CMakeFiles/lla2enu_generate_messages_lisp.dir/build.make
 
 .PHONY : lla2enu_generate_messages_lisp

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 include lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/progress.make
 
 lla2enu/CMakeFiles/lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/msg/custom_msg.l
+lla2enu/CMakeFiles/lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/srv/distance.l
 lla2enu/CMakeFiles/lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/manifest.l
 
 
@@ -62,12 +63,18 @@ lla2enu/CMakeFiles/lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from lla2enu/custom_msg.msg"
 	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/osboxes/Robotics/src/lla2enu/msg/custom_msg.msg -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/msg
 
+/home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/srv/distance.l: /opt/ros/melodic/lib/geneus/gen_eus.py
+/home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/srv/distance.l: /home/osboxes/Robotics/src/lla2enu/srv/distance.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from lla2enu/distance.srv"
+	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/osboxes/Robotics/src/lla2enu/srv/distance.srv -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/srv
+
 /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/manifest.l: /opt/ros/melodic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for lla2enu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for lla2enu"
 	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu lla2enu std_msgs
 
 lla2enu_generate_messages_eus: lla2enu/CMakeFiles/lla2enu_generate_messages_eus
 lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/msg/custom_msg.l
+lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/srv/distance.l
 lla2enu_generate_messages_eus: /home/osboxes/Robotics/devel/share/roseus/ros/lla2enu/manifest.l
 lla2enu_generate_messages_eus: lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/build.make
 

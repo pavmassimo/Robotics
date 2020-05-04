@@ -1,0 +1,8 @@
+float64 xEastFront
+float64 yNorthFront
+float64 zUpFront
+float64 xEastObs
+float64 yNorthObs
+float64 zUpObs
+---
+float64 distance

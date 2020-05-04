@@ -17,15 +17,18 @@ add_message_files(
   custom_msg.msg
 )
 
+add_service_files(
+  FILES
+  distance.srv
+)
+
 generate_messages(
   DEPENDENCIES
   std_msgs
-  #msg
 )
 
 generate_dynamic_reconfigure_options(
   cfg/slider.cfg
-#  cfg/DynReconf2.cfg
 )
 
 catkin_package( CATKIN_DEPENDS
@@ -41,10 +44,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-#add_dependencies(slider ${PROJECT_NAME}_gencfg)
-
 add_executable(subscriber_node src/subscriber_node.cpp)
-add_executable(service src/service.cpp)
-
 target_link_libraries(subscriber_node ${catkin_LIBRARIES})
-target_link_libraries(service ${catkin_LIBRARIES})
+
+add_executable(client src/client.cpp)
+target_link_libraries(client ${catkin_LIBRARIES})
+add_dependencies(client ${catkin_EXPORTED_TARGETS})
+
+add_executable(server src/server.cpp)
+target_link_libraries(server ${catkin_LIBRARIES})
+add_dependencies(server ${catkin_EXPORTED_TARGETS})
+

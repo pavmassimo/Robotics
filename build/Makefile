@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) -f lla2enu/CMakeFiles/server.dir/build.make lla2enu/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
 # Target rules for targets named subscriber_node
 
 # Build rule for target.
@@ -309,6 +322,19 @@ lla2enu_generate_messages_py: cmake_check_build_system
 lla2enu_generate_messages_py/fast:
 	$(MAKE) -f lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/build.make lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/build
 .PHONY : lla2enu_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named lla2enu_gennodejs
+
+# Build rule for target.
+lla2enu_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lla2enu_gennodejs
+.PHONY : lla2enu_gennodejs
+
+# fast build rule for target.
+lla2enu_gennodejs/fast:
+	$(MAKE) -f lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build.make lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build
+.PHONY : lla2enu_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -491,6 +517,19 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 rosgraph_msgs_generate_messages_eus/fast:
 	$(MAKE) -f lla2enu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make lla2enu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) -f lla2enu/CMakeFiles/client.dir/build.make lla2enu/CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 #=============================================================================
 # Target rules for targets named lla2enu_geneus
@@ -779,17 +818,17 @@ _lla2enu_generate_messages_check_deps_custom_msg/fast:
 .PHONY : _lla2enu_generate_messages_check_deps_custom_msg/fast
 
 #=============================================================================
-# Target rules for targets named service
+# Target rules for targets named _lla2enu_generate_messages_check_deps_distance
 
 # Build rule for target.
-service: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 service
-.PHONY : service
+_lla2enu_generate_messages_check_deps_distance: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _lla2enu_generate_messages_check_deps_distance
+.PHONY : _lla2enu_generate_messages_check_deps_distance
 
 # fast build rule for target.
-service/fast:
-	$(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/build
-.PHONY : service/fast
+_lla2enu_generate_messages_check_deps_distance/fast:
+	$(MAKE) -f lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/build.make lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/build
+.PHONY : _lla2enu_generate_messages_check_deps_distance/fast
 
 #=============================================================================
 # Target rules for targets named lla2enu_generate_messages_eus
@@ -803,19 +842,6 @@ lla2enu_generate_messages_eus: cmake_check_build_system
 lla2enu_generate_messages_eus/fast:
 	$(MAKE) -f lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/build.make lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/build
 .PHONY : lla2enu_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named lla2enu_gennodejs
-
-# Build rule for target.
-lla2enu_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lla2enu_gennodejs
-.PHONY : lla2enu_gennodejs
-
-# fast build rule for target.
-lla2enu_gennodejs/fast:
-	$(MAKE) -f lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build.make lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build
-.PHONY : lla2enu_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named tf_publisher
@@ -1177,8 +1203,10 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... server"
 	@echo "... subscriber_node"
 	@echo "... lla2enu_generate_messages_py"
+	@echo "... lla2enu_gennodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
@@ -1193,6 +1221,7 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... client"
 	@echo "... lla2enu_geneus"
 	@echo "... lla2enu_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_cpp"
@@ -1215,9 +1244,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... _lla2enu_generate_messages_check_deps_custom_msg"
-	@echo "... service"
+	@echo "... _lla2enu_generate_messages_check_deps_distance"
 	@echo "... lla2enu_generate_messages_eus"
-	@echo "... lla2enu_gennodejs"
 	@echo "... tf_publisher"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_cpp"

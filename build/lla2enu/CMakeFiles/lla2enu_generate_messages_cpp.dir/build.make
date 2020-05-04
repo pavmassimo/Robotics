@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 include lla2enu/CMakeFiles/lla2enu_generate_messages_cpp.dir/progress.make
 
 lla2enu/CMakeFiles/lla2enu_generate_messages_cpp: /home/osboxes/Robotics/devel/include/lla2enu/custom_msg.h
+lla2enu/CMakeFiles/lla2enu_generate_messages_cpp: /home/osboxes/Robotics/devel/include/lla2enu/distance.h
 
 
 /home/osboxes/Robotics/devel/include/lla2enu/custom_msg.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,16 @@ lla2enu/CMakeFiles/lla2enu_generate_messages_cpp: /home/osboxes/Robotics/devel/i
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from lla2enu/custom_msg.msg"
 	cd /home/osboxes/Robotics/src/lla2enu && /home/osboxes/Robotics/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/osboxes/Robotics/src/lla2enu/msg/custom_msg.msg -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/include/lla2enu -e /opt/ros/melodic/share/gencpp/cmake/..
 
+/home/osboxes/Robotics/devel/include/lla2enu/distance.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/osboxes/Robotics/devel/include/lla2enu/distance.h: /home/osboxes/Robotics/src/lla2enu/srv/distance.srv
+/home/osboxes/Robotics/devel/include/lla2enu/distance.h: /opt/ros/melodic/share/gencpp/msg.h.template
+/home/osboxes/Robotics/devel/include/lla2enu/distance.h: /opt/ros/melodic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from lla2enu/distance.srv"
+	cd /home/osboxes/Robotics/src/lla2enu && /home/osboxes/Robotics/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/osboxes/Robotics/src/lla2enu/srv/distance.srv -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/include/lla2enu -e /opt/ros/melodic/share/gencpp/cmake/..
+
 lla2enu_generate_messages_cpp: lla2enu/CMakeFiles/lla2enu_generate_messages_cpp
 lla2enu_generate_messages_cpp: /home/osboxes/Robotics/devel/include/lla2enu/custom_msg.h
+lla2enu_generate_messages_cpp: /home/osboxes/Robotics/devel/include/lla2enu/distance.h
 lla2enu_generate_messages_cpp: lla2enu/CMakeFiles/lla2enu_generate_messages_cpp.dir/build.make
 
 .PHONY : lla2enu_generate_messages_cpp

@@ -11,20 +11,20 @@ class SubscribeAndPublish
 public:
 	SubscribeAndPublish(std::string arg)
 	{
-		//n_.getParam("/role", role);
+		// creating role from args
 		role_ = arg.c_str();
 
-		//Topic you want to publish
-		pub_ = n_.advertise<nav_msgs::Odometry>("/" + role_ + "_enu", 1000);
+		// binding publisher depending on role
+		pub_ = n_.advertise<nav_msgs::Odometry>("/" + role_ + "_enu", 1000); 
 
-		//Topic you want to subscribe
+		// binding subscriber depending on role
 		sub_ = n_.subscribe("/swiftnav/"+ role_ + "/gps_pose", 1000, &SubscribeAndPublish::callback, this);
 	}
 
 
 	void callback(const sensor_msgs::NavSatFix::ConstPtr& msg)
 	{
-		//ROS_INFO("Input position: [%f,%f, %f]", msg->latitude, msg->longitude,msg->altitude);
+		// ROS_INFO("Input position: [%f,%f, %f]", msg->latitude, msg->longitude,msg->altitude);
 
 		// fixed values
 
@@ -46,7 +46,8 @@ public:
 		// if the message is formed of only 0, we publish an empty message since it means the gps has dropped
 		if (latitude == 0 && longitude == 0 && h == 0){
 			output.header.stamp = current_time;
-			output.header.frame_id = role_ + "_enu";
+			output.header.frame_id = "world"; // + "_enu";
+			output.child_frame_id = role_;
 			output.pose.pose.position.x = NAN;
 			output.pose.pose.position.y = NAN;
 			output.pose.pose.position.z = NAN;
@@ -109,18 +110,22 @@ public:
 
 		// preparing the message to publish
 		output.header.stamp = current_time;
-		output.header.frame_id = role_ + "_enu";
+		output.header.frame_id = "world"; // + "_enu";
+		output.child_frame_id = role_;
 		output.pose.pose.position.x = xEast;
 		output.pose.pose.position.y = yNorth;
 		output.pose.pose.position.z = zUp;
-		output.pose.pose.orientation.w = 1;
+		output.pose.pose.orientation.y = 1;
 		pub_.publish(output);
 
 	}
 
 private:
+	// instantiate node handler
 	ros::NodeHandle n_; 
+	// instantiate publisher
 	ros::Publisher pub_;
+	// instantiate subscriber
 	ros::Subscriber sub_;
 
 	std::string role_;
@@ -129,11 +134,11 @@ private:
 
 int main(int argc, char **argv)
 {
-	//Initiate ROS
+	// Initiate ROS
 	ros::init(argc, argv, "man_in_the_middle");
 
-	//Create an object of class 
-	SubscribeAndPublish SAPObject(argv[1]);
+	// Create instance of class SubscribeAndPublish
+	SubscribeAndPublish SubscribeAndPublish(argv[1]);
 
 	ros::spin();
 

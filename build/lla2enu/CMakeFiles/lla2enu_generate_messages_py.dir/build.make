@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/osboxes/Robotics/build
 include lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/progress.make
 
 lla2enu/CMakeFiles/lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/_custom_msg.py
+lla2enu/CMakeFiles/lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py
 lla2enu/CMakeFiles/lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/__init__.py
+lla2enu/CMakeFiles/lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/__init__.py
 
 
 /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/_custom_msg.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
@@ -62,14 +64,28 @@ lla2enu/CMakeFiles/lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/li
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG lla2enu/custom_msg"
 	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/osboxes/Robotics/src/lla2enu/msg/custom_msg.msg -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg
 
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py: /home/osboxes/Robotics/src/lla2enu/srv/distance.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV lla2enu/distance"
+	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/osboxes/Robotics/src/lla2enu/srv/distance.srv -Illa2enu:/home/osboxes/Robotics/src/lla2enu/msg -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -p lla2enu -o /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv
+
 /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/__init__.py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/_custom_msg.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for lla2enu"
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/__init__.py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for lla2enu"
 	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg --initpy
+
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/__init__.py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/_custom_msg.py
+/home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/__init__.py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/osboxes/Robotics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for lla2enu"
+	cd /home/osboxes/Robotics/build/lla2enu && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv --initpy
 
 lla2enu_generate_messages_py: lla2enu/CMakeFiles/lla2enu_generate_messages_py
 lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/_custom_msg.py
+lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/_distance.py
 lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/msg/__init__.py
+lla2enu_generate_messages_py: /home/osboxes/Robotics/devel/lib/python2.7/dist-packages/lla2enu/srv/__init__.py
 lla2enu_generate_messages_py: lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/build.make
 
 .PHONY : lla2enu_generate_messages_py

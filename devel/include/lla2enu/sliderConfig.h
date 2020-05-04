@@ -69,7 +69,7 @@ namespace lla2enu
         field(a_f)
       {}
 
-      T (sliderConfig::* field);
+      T sliderConfig::* field;
 
       virtual void clamp(sliderConfig &config, const sliderConfig &max, const sliderConfig &min) const
       {
@@ -216,7 +216,7 @@ namespace lla2enu
         }
       }
 
-      T (PT::* field);
+      T PT::* field;
       std::vector<sliderConfig::AbstractGroupDescriptionConstPtr> groups;
     };
 

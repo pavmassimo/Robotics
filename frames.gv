@@ -1,2 +1,8 @@
 digraph G {
-"no tf data recieved"}
+"world" -> "obs"[label="Broadcaster: /tf_publisher_obs\nAverage rate: 10.186 Hz\nMost recent transform: 1588601856.423 ( 0.033 sec old)\nBuffer length: 4.909 sec\n"];
+"world" -> "front"[label="Broadcaster: /tf_publisher_front\nAverage rate: 10.205 Hz\nMost recent transform: 1588601856.371 ( 0.085 sec old)\nBuffer length: 4.802 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1588601856.456"[ shape=plaintext ] ;
+ }->"world";
+}

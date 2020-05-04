@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+lla2enu/CMakeFiles/server.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/server.dir/rule
+.PHONY : lla2enu/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: lla2enu/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/server.dir/build.make lla2enu/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+# Convenience name for target.
 lla2enu/CMakeFiles/subscriber_node.dir/rule:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/subscriber_node.dir/rule
 .PHONY : lla2enu/CMakeFiles/subscriber_node.dir/rule
@@ -196,6 +211,21 @@ lla2enu_generate_messages_py: lla2enu/CMakeFiles/lla2enu_generate_messages_py.di
 lla2enu_generate_messages_py/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/build.make lla2enu/CMakeFiles/lla2enu_generate_messages_py.dir/build
 .PHONY : lla2enu_generate_messages_py/fast
+
+# Convenience name for target.
+lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
+.PHONY : lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
+
+# Convenience name for target.
+lla2enu_gennodejs: lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
+
+.PHONY : lla2enu_gennodejs
+
+# fast build rule for target.
+lla2enu_gennodejs/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build.make lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build
+.PHONY : lla2enu_gennodejs/fast
 
 # Convenience name for target.
 lla2enu/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -406,6 +436,21 @@ rosgraph_msgs_generate_messages_eus: lla2enu/CMakeFiles/rosgraph_msgs_generate_m
 rosgraph_msgs_generate_messages_eus/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make lla2enu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+lla2enu/CMakeFiles/client.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/client.dir/rule
+.PHONY : lla2enu/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: lla2enu/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/client.dir/build.make lla2enu/CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 # Convenience name for target.
 lla2enu/CMakeFiles/lla2enu_geneus.dir/rule:
@@ -738,19 +783,19 @@ _lla2enu_generate_messages_check_deps_custom_msg/fast:
 .PHONY : _lla2enu_generate_messages_check_deps_custom_msg/fast
 
 # Convenience name for target.
-lla2enu/CMakeFiles/service.dir/rule:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/service.dir/rule
-.PHONY : lla2enu/CMakeFiles/service.dir/rule
+lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/rule:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/rule
+.PHONY : lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/rule
 
 # Convenience name for target.
-service: lla2enu/CMakeFiles/service.dir/rule
+_lla2enu_generate_messages_check_deps_distance: lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/rule
 
-.PHONY : service
+.PHONY : _lla2enu_generate_messages_check_deps_distance
 
 # fast build rule for target.
-service/fast:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/build
-.PHONY : service/fast
+_lla2enu_generate_messages_check_deps_distance/fast:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/build.make lla2enu/CMakeFiles/_lla2enu_generate_messages_check_deps_distance.dir/build
+.PHONY : _lla2enu_generate_messages_check_deps_distance/fast
 
 # Convenience name for target.
 lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/rule:
@@ -767,47 +812,59 @@ lla2enu_generate_messages_eus/fast:
 	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/build.make lla2enu/CMakeFiles/lla2enu_generate_messages_eus.dir/build
 .PHONY : lla2enu_generate_messages_eus/fast
 
-# Convenience name for target.
-lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
-.PHONY : lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
+src/client.o: src/client.cpp.o
 
-# Convenience name for target.
-lla2enu_gennodejs: lla2enu/CMakeFiles/lla2enu_gennodejs.dir/rule
-
-.PHONY : lla2enu_gennodejs
-
-# fast build rule for target.
-lla2enu_gennodejs/fast:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build.make lla2enu/CMakeFiles/lla2enu_gennodejs.dir/build
-.PHONY : lla2enu_gennodejs/fast
-
-src/service.o: src/service.cpp.o
-
-.PHONY : src/service.o
+.PHONY : src/client.o
 
 # target to build an object file
-src/service.cpp.o:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.o
-.PHONY : src/service.cpp.o
+src/client.cpp.o:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/client.dir/build.make lla2enu/CMakeFiles/client.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
 
-src/service.i: src/service.cpp.i
+src/client.i: src/client.cpp.i
 
-.PHONY : src/service.i
+.PHONY : src/client.i
 
 # target to preprocess a source file
-src/service.cpp.i:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.i
-.PHONY : src/service.cpp.i
+src/client.cpp.i:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/client.dir/build.make lla2enu/CMakeFiles/client.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
 
-src/service.s: src/service.cpp.s
+src/client.s: src/client.cpp.s
 
-.PHONY : src/service.s
+.PHONY : src/client.s
 
 # target to generate assembly for a file
-src/service.cpp.s:
-	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/service.dir/build.make lla2enu/CMakeFiles/service.dir/src/service.cpp.s
-.PHONY : src/service.cpp.s
+src/client.cpp.s:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/client.dir/build.make lla2enu/CMakeFiles/client.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
+
+src/server.o: src/server.cpp.o
+
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/server.dir/build.make lla2enu/CMakeFiles/server.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/server.dir/build.make lla2enu/CMakeFiles/server.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	cd /home/osboxes/Robotics/build && $(MAKE) -f lla2enu/CMakeFiles/server.dir/build.make lla2enu/CMakeFiles/server.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
 
 src/subscriber_node.o: src/subscriber_node.cpp.o
 
@@ -846,8 +903,10 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... server"
 	@echo "... subscriber_node"
 	@echo "... lla2enu_generate_messages_py"
+	@echo "... lla2enu_gennodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
@@ -863,6 +922,7 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... client"
 	@echo "... lla2enu_geneus"
 	@echo "... lla2enu_generate_messages_nodejs"
 	@echo "... rebuild_cache"
@@ -887,12 +947,14 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... _lla2enu_generate_messages_check_deps_custom_msg"
-	@echo "... service"
+	@echo "... _lla2enu_generate_messages_check_deps_distance"
 	@echo "... lla2enu_generate_messages_eus"
-	@echo "... lla2enu_gennodejs"
-	@echo "... src/service.o"
-	@echo "... src/service.i"
-	@echo "... src/service.s"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 	@echo "... src/subscriber_node.o"
 	@echo "... src/subscriber_node.i"
 	@echo "... src/subscriber_node.s"
