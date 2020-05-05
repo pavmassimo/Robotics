@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_filters
   message_generation
   dynamic_reconfigure
+  tf
 )
 
 add_message_files(

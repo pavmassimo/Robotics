@@ -14,10 +14,6 @@
 
 	<node pkg="lla2enu" type="server" name="server" output="screen" />
 
-	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher_front" output="screen" args = "front" />
-
-	<node pkg="tf_publisher" type="tf_publisher" name="tf_publisher_obs" output="screen" args = "obs" />
-
 	<node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure"/>
 
 </launch>

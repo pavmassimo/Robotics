@@ -5,6 +5,7 @@
 #include <iostream>
 #include <nav_msgs/Odometry.h>
 #include <string>
+#include <tf/transform_broadcaster.h>
 
 class SubscribeAndPublish
 {
@@ -52,6 +53,7 @@ public:
 			output.pose.pose.position.y = NAN;
 			output.pose.pose.position.z = NAN;
 			pub_.publish(output);
+			// if message is 0,0,0 we end the function here and the tf is not published
 			return;
 		}
 
@@ -108,6 +110,14 @@ public:
 
 		//ROS_INFO("ENU position: [%f,%f, %f]", xEast, yNorth,zUp);
 
+		// Publish TF
+		tf::Transform transform;
+		transform.setOrigin(tf::Vector3(xEast, yNorth, zUp) );
+		tf::Quaternion q;
+		q.setRPY(0, 0, 0);
+		transform.setRotation(q);
+		br_.sendTransform(tf::StampedTransform(transform, current_time, "world", role_));
+
 		// preparing the message to publish
 		output.header.stamp = current_time;
 		output.header.frame_id = "world"; // + "_enu";
@@ -127,6 +137,8 @@ private:
 	ros::Publisher pub_;
 	// instantiate subscriber
 	ros::Subscriber sub_;
+	// instantiate tf broadcaster
+	tf::TransformBroadcaster br_;
 
 	std::string role_;
 
