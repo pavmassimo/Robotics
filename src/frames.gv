@@ -1,0 +1,8 @@
+digraph G {
+"world" -> "front"[label="Broadcaster: /subscriber_front\nAverage rate: 10.191 Hz\nMost recent transform: 1580140097.831 ( 8565342.136 sec old)\nBuffer length: 4.906 sec\n"];
+"world" -> "obs"[label="Broadcaster: /subscriber_obs\nAverage rate: 10.205 Hz\nMost recent transform: 1580140097.873 ( 8565342.094 sec old)\nBuffer length: 4.900 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1588705439.967"[ shape=plaintext ] ;
+ }->"world";
+}
