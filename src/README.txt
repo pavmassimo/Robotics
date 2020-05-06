@@ -1,12 +1,16 @@
 Montanari Matteo 928544
 Pavan Massimo 945302
 
+It's recommended to execute the command "source devel/setup.bash" every time before running the launcher.
+
+A compilation error might occur while catkin_make for the first time. In this case it's recommended to compile once without the nodes, leaving only the messages to create their header, and then re-add them and compile again. 
+
 the project consists in: 
 	3 main nodes inside sources:
 		-subscriber_node.cpp is the file describing the node that reads the arguments from the bag, and publish the odometry
 			and the tf.
 		-client.cpp reads the odometry messages published from the subscriber and from them it calulates the distance
-			calling the service server, and then publish the custom message.
+			calling the service server, and then publishes the custom message under the topic /results.
 		-server.cpp is a simple service server to calculate the distance from the x,y,z values of the 2 points.
 	
 	1 message file inside msg:
@@ -33,6 +37,8 @@ the structure of the custom message is the following:
 	string status_flag
 	float64 distance
 please note that, as specification, no message of this type is published until both messages from front and obs are arriving.
+status_flag can assume values 'safe', 'unsafe', 'crash', and, when a gps signal is missing, 'unknown'.
+distance is set to nan when a gps signal is missing.
 
 
 the structure of the service messages between client and server is the following:
