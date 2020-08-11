@@ -1,0 +1,62 @@
+
+<launch>
+  <!-- static tf -->
+  <node pkg="tf" type="static_transform_publisher" name="name2" args="-0,675 -0,008 0,96 0 0 0 1 camera_pose_frame os1_sensor 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher2" args="0 0 0.03618
+ 0 0 1 0 os1_sensor os1_lidar 100" />
+
+  <!-- use sim time -->
+  <param name="/use_sim_time" value="true"/>
+
+  <!-- pointcloud to laserscan -->
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <remap from="cloud_in" to="/os1_cloud_node/points"/>
+    <remap from="scan" to="/sensor_msgs/LaserScan" />
+    <rosparam>
+      target_frame: os1_lidar
+      min_height: 0.0
+      max_height: 1.0
+      angle_min: -3.14
+      angle_max: 3.14
+      angle_increment: 0.0087
+      scan_time: 0.3333
+      range_min: 0.45
+      range_max: 20.0
+      use_inf: true
+      #concurrency_level affects number of pc queued for processing and the number of threadsused
+      # 0: Detect number of cores
+      # 1: Single threaded
+      # 2: inf : Parallelism level
+      concurrency_level: 1
+    </rosparam>
+  </node>
+
+  <!-- Name of the map to use and initial position -->
+  <arg name="map_file"       default="$(find localization)/maps/map.yaml"/> 
+  <arg name="initial_pose_x" default="-0.5"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+
+  <arg name="odom_frame_id"   default="camera_odom_frame"/>
+  <arg name="global_frame_id" default="map"/>
+
+  <!--  ****** Maps *****  -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+    <param name="frame_id" value="map"/>
+  </node>
+
+
+  <!--  ****** amcl *****  -->
+  <include file="$(find localization)/launch/amcl.launch.xml">
+    <arg name="scan_topic" value="/sensor_msgs/LaserScan"/>
+    <arg name="use_map_topic" value="true"/>
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!--  **************** Visualisation ****************  -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find localization)/rviz/amcl.rviz"/>
+
+</launch>

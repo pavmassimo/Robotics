@@ -1,0 +1,80 @@
+Montanari Matteo 928544
+Pavan Massimo 945302
+
+PROJECT 2 ROBOTICS 2020
+
+<-- files description -->
+the project consists in a package called "localization" containing:
+
+	1 launch file for gmapping to compute the map with optitrack data - optitrack.launch
+		this launch file does the following:
+			sets use_sim_time equals to true.
+			create a static_transform_publisher between Robot_1/base_link and os1_sensor.
+			instantiate a pointcloud_to_laserscan node that creates a topic /sensor_msgs/LaserScan.
+			instantiate gmapping node from the file optitrackGmapping.launch.xml.
+			open rivz with configurations from "optitrack.rviz".
+
+			observation: after about 80 seconds, the map will not change anymore since there is no more odometry data.
+			the result is therefore worse than the one generated from visualOdom since it has access to less than half the available bag.
+
+	1 launch file for gmapping to compute the map with visual odometry data - visualOdom.launch
+		this launch file does the following:
+			sets use_sim_time equals to true.
+			create a static_transform_publisher between camera_pose_fram and os1_sensor.
+			instantiate a pointcloud_to_laserscan node that creates a topic /sensor_msgs/LaserScan.
+			instantiate gmapping node from the file visualOdomGmapping.launch.xml.
+			open rivz with configurations from "visualOdom.rviz".
+
+	1 launch file for for move_base/amcl - amcl.launch
+		this launch file does the following:
+			sets use_sim_time equals to true.
+			create a static_transform_publisher between camera_pose_fram and os1_sensor.
+			instantiate a pointcloud_to_laserscan node that creates a topic /sensor_msgs/LaserScan.
+			instantiate a map_server node with the map created with the visualOdom.launch.
+			instantiate amcl node from the file amcl.launch.xml.
+			open rivz with configurations from "amcl.rviz"
+
+	optitrackGmapping.launch.xml - file containing the parameters to perform gmapping using optitrack
+	
+	visualOdomGmapping.launch.xml - file containing the parameters to perform gmapping using visual odometry
+
+	amcl.launch.xml - file containing the parameters to perform amcl localization
+
+	2 maps obtained. One with optitrack and the other with visual odometry, using bag trajectory2.
+
+	2 tf tree obtained. One with optitrack and the other with visual odometry, using bag trajectory2.
+
+	3 rviz configurations to correctly open rviz depending on which launch file you are running.
+
+
+<-- important notice -->	
+the second bag is missing os1_lidar (while the first bag has it). 
+this can be solved by adding a static_transform_publisher with the following parameters: 0 0 0.03618 0 0 1 0 os1_lidar os1_sensor 100.
+we added this static_transform_publisher to each launch file, no matter if we are working with bag trajectory1 or bag trajectory2.
+
+<-- tf tree -->	
+regarding the optitrack tf, we had to fix the tf tree by adding a static_transform_publisher between Robot_1/base_link and os1_sensor, adjusting the yaw offset.
+regarding the visaul odometry tf, we had to fix the tf tree by adding a static_transform_publisher between camera_pose_fram and os1_sensor, adjusting the x, y, z offset.
+we added two tf tree images to show the end results of each version.
+
+<-- start launch files -->	
+to run these experiments, you just need to run the launch file and then play the correct bag.
+
+<-- map generation -->
+the map was generated using bag trajectory2 while the the amcl was tested by playing bag trajectory1.
+
+in the package, two maps are present. They are generated with optitrack.launch and visualOdom.launch using the bag trajectory2.
+The map called "optimap" has been generated with optritrack.launch
+The map called "map" has been generated with visualOdom.launch
+
+
+<-- comments -->
+regarding the pointcloud_to_laserscan node, we had to modify the parameters regarding the maximum distance because a lot of points were being dropped.
+we also had to change the parameters regarding the angle.
+
+regarding the gmapping node, we had to modify some parameters. More specifically, we changed maxUrange and maxRange.
+we also made linear_update smaller to have more frequent updates.
+
+regarding the amcl node, we changed the initial pose to improve performances and we decreased update_min_d and update_min_a to have the more frequent updates.
+we decreased the parameter laser_max_range: this was due to the fact that it had a good initial position and we wanted to get as precise as possbile by focusing on the close items around the robot.
+we increased the odom parameters (odom_alpha1, odom_alpha2, odom_alpha3, odom_alpha4) to improve the expected noise. The biggest improvements were given by increasing odom_alpha3, which we set equal to 3.

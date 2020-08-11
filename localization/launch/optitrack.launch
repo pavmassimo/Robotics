@@ -1,0 +1,39 @@
+<launch>
+      <!-- static tf -->
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 3,14 0 0 Robot_1/base_link os1_sensor 100" />
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher2" args="0 0 0.03618
+ 0 0 1 0 os1_sensor os1_lidar 100" />
+
+    <!-- use sim time -->
+    <param name="/use_sim_time" value="true"/>
+
+    <!-- pointcloud to laserscan -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+      <remap from="cloud_in" to="/os1_cloud_node/points"/>
+      <remap from="scan" to="/sensor_msgs/LaserScan" />
+      <rosparam>
+        target_frame: os1_lidar
+        min_height: 0.0
+        max_height: 1.0
+        
+        angle_min: -3.14
+        angle_max: 3.14
+        angle_increment: 0.0087
+        scan_time: 0.3333
+        range_min: 0.45
+        range_max: 40.0
+        use_inf: true
+        #concurrency_level affects number of pc queued for processing and the number of threadsused
+        # 0: Detect number of cores
+        # 1: Single threaded
+        # 2: inf : Parallelism level
+        concurrency_level: 1
+      </rosparam>
+    </node>
+
+    <!-- Gmapping -->
+    <include file="$(find localization)/launch/optitrackGmapping.launch.xml"/>
+
+    <!--  **************** Visualisation ****************  -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find localization)/rviz/optitrack.rviz"/>
+</launch>
